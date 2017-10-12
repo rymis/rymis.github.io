@@ -144,7 +144,7 @@ class Blog:
             for i, p in enumerate(self.posts):
                 self._write_page(p)
                 if i < 10:
-                    f.write("""<div class="blog-post">\n%s\n</div>""" % p.get_html())
+                    f.write("""<div class="blog-post">\n<div id="post_%s" class="post-title">%s</div>\n%s\n</div>\n""" % (p.get_id(), p.get_title(), p.get_html()))
             f.write(self._footer)
 
         fnm = os.path.join(self.top, "db.json")
