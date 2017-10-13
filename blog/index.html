@@ -22,11 +22,20 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/skeleton.css">
 		<link rel="stylesheet" href="pygment_styles.css" type="text/css"/>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script>
+var db = { };
+function initializeBlogging(data) {
+	db = data;
+}
+
+jQuery.ready(function () {
+	jQuery.getJSON("db.json", initializeBlogging())
+});
+		</script>
 	</head>
 	<body>
-<div class="blog-post">
-<div id="post_first" class="post-title">The beginning of my blog.</div>
-<h2>The beginning of my blog.</h2>
+<div class="blog-post" id="post_first"><h2>The beginning of my blog.</h2>
 <p>This is the first post in my small blog at rymis.github.io. As the matter of fact it is also some test message for my super small blog platform.</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
